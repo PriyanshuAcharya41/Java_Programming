@@ -8,7 +8,7 @@ public class Histogram {
 
         for(int i=1;i<heights.length;i++){
             int curr=heights[i];
-            while(!s.isEmpty() && curr<heights[s.peek()]){
+            while(!s.isEmpty() && curr<=heights[s.peek()]){
                 s.pop();
             }
             if(s.isEmpty()){
@@ -24,11 +24,12 @@ public class Histogram {
     }
     public static void nsr(int heights[],int arr1[]){
         arr1[arr1.length-1]=heights.length;
+        System.out.println("LAST IS "+arr1[arr1.length-1]);
         Stack<Integer>s=new Stack<>();
         s.push(arr1.length-1);
         for(int i=heights.length-2;i>=0;i--){
             int curr=heights[i];
-            while(!s.isEmpty() && curr<heights[s.peek()]){
+            while(!s.isEmpty() && curr<=heights[s.peek()]){
                 s.pop();
             }
             if(s.isEmpty()){
@@ -50,7 +51,7 @@ public class Histogram {
         return max;
     }
     public static void main(String args[]){
-        int heights[]={2,1,5,6,2,3};
+        int heights[]={1,1};
         int arr[]=new int[heights.length];
         int arr1[]=new int[heights.length];
         nsl(heights, arr);

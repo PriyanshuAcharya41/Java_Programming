@@ -21,7 +21,7 @@ public class StockSpan {
         }
     }
     public static void main(String args[]){
-        int stocks[]={100,80,60,70,60,85,100};
+        int stocks[]={100,80,60,70,60,75,85};
         int span[]=new int[stocks.length];
         stocks_span(stocks, span);
         for(int i=0;i<span.length;i++){
